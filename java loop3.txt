@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int base=sc.nextInt();
+        int ans=0;
+        int power=1;
+        while(n>0){
+            int digit=n%10;
+            ans=ans+digit*power;
+            power=power*base;
+            n=n/10;
+        }
+        System.out.println(ans);
+    }
+}
