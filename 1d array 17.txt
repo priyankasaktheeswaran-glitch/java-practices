@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        long[] arr = new long[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextLong();
+        }
+        long largest=arr[0];
+        long second=Integer.MIN_VALUE;
+        for(int i=0;i<n;i++){
+            if(arr[i]>largest){
+                second=largest;
+                largest=arr[i];
+            }
+            else if(arr[i]>second && arr[i]<largest){
+                second=arr[i];
+            }
+        }
+        System.out.println(second);
+    }
+}
